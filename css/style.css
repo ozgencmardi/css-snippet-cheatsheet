@@ -1,5 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --pink: #e868ed;
+    --bg-color: #333940;
+    --border-color: #e0eae5;
+}
+    
 body {
-    background-color: #333940;
+    background-color: var(--bg-color);
     color: #fff;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     text-align: center;
@@ -7,48 +19,66 @@ body {
 }
 
 h1 {
-    color: #e868ed;
+    color: var(--pink);
 }
 
 h2 {
-    color: #e868ed;
-    border: 2px solid #e0eae5;
+    color: var(--pink);
+    border: 2px solid var(--border-color);
     border-radius: 10px;
     padding: 10px;
+    margin-bottom: 10px;
 }
 
-h5 {
+h3 {
+    color: var(--pink);
+}
+
+header p {
     font-weight: 300;
-}
-
-p { 
-    color: #e868ed;
+    margin-top: 20px;
 }
 
 main {
+    margin-top: 50px;
+    max-width: 100%;
+}
+
+.container {   
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 50px;
+    justify-content: space-around;   
 }
 
-.box {
-    border: 2px dashed #e0eae5;
-    flex-basis: 30%;
+.row {
+    display: flex;
+    flex-basis: 33.3%;
+}
+
+.card {
+    border: 2px dashed var(--border-color);  
+    margin: 30px 10px;
     padding: 10px;
-    margin-bottom: 20px;
-    width: 100%;
+    width: 100%; 
+    height: 280px;
+    cursor: pointer;
 }
 
-.heading {
-    margin: -50px 10px 0 10px;
-    background-color: #333940;
+.card .heading {
+    margin: -40px 10px 0 10px;
+    background-color: var(--bg-color);
 }
 
-pre {
+.card p { 
+    color: var(--pink);
+    height: 40px;
+    vertical-align: middle;
+}
+
+.card pre {
     background: linear-gradient(#6a4874, #a056a7);
-    height: 100%;
+    height: 180px;
     padding: 20px;
     margin: 10px;
     border-radius: 10px;  
@@ -56,5 +86,21 @@ pre {
     white-space: pre-line;
 }
 
+footer {
+    color: var(--pink);
+    font-size: 20px;
+}
 
+@media only screen and (max-width: 992px) {
+    
+    .row {
+        flex-basis: 50%;
+    }
+}
 
+@media only screen and (max-width: 768px) {
+    
+    .row {
+        flex-basis: 100%;
+    }
+}
